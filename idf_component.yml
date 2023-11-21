@@ -1,6 +1,6 @@
 ## IDF Component Manager Manifest File
+version: "1.0.1"
 description: Xiao round display driver
-
 url: https://github.com/bienxanh1901/xiao_round_display
 issues: https://github.com/bienxanh1901/xiao_round_display/issues
 documentation: https://github.com/bienxanh1901/xiao_round_display/tree/main/README.md

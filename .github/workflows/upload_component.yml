@@ -13,7 +13,7 @@ jobs:
       - name: Upload component to the registry
         uses: espressif/upload-components-ci-action@v1
         with:
-          namespace: "bienxanh1901 "
-          name: "bienxanh1901"
+          namespace: "bienxanh1901"
+          name: "xiao_round_display"
           version: ${{ github.ref_name }}
           api_token: ${{ secrets.IDF_COMPONENT_API_TOKEN }}
