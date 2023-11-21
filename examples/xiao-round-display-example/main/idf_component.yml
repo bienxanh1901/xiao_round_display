@@ -1,0 +1,9 @@
+## IDF Component Manager Manifest File
+dependencies:
+  bienxanh1901/xiao_round_display: 
+    version: "*"
+    override_path: "../../../"
+  ## Required IDF version
+  idf:
+    version: ">=5.0.0"
+
