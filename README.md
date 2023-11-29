@@ -1,5 +1,6 @@
 # XIAO ROUND DISPLAY Driver
 
+[![Build examples](https://github.com/bienxanh1901/xiao_round_display/actions/workflows/build_example.yml/badge.svg)](https://github.com/bienxanh1901/xiao_round_display/actions/workflows/build_example.yml) [![Component Registry](https://components.espressif.com/components/bienxanh1901/xiao_round_display/badge.svg)](https://components.espressif.com/components/bienxanh1901/xiao_round_display)
 
 This repository contains an ESP-IDF driver for a Xiao Round display module. This module uses GC9A01 controller for LCD and CST816S controller for touch screen. Refer [Xiao Documentation](https://wiki.seeedstudio.com/seeedstudio_round_display_usage/) for more detailed.
 
