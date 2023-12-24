@@ -73,6 +73,7 @@ void xiao_round_display_hardware_test()
     slider_label = lv_label_create(scr);
     lv_label_set_text(slider_label, "0");
     lv_obj_align_to(slider_label, slider, LV_ALIGN_OUT_TOP_MID, 0, -15);
+    // lv_obj_set_style_bg_color(slider, lv_color_hex(0xfa0000), LV_PART_MAIN | LV_STATE_DEFAULT );
 
     /* SD card  check*/
     lv_obj_t *tf_label = lv_label_create(lv_scr_act());
@@ -102,6 +103,7 @@ void xiao_round_display_hardware_test()
     lv_obj_clear_flag(battery_outline, LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_size(battery_outline, 40, 20);
     lv_obj_set_pos(battery_outline, 128, 42);
+    // lv_obj_set_style_bg_color(battery_outline, lv_color_hex(0x08EB25), LV_PART_MAIN | LV_STATE_DEFAULT );
 
     battery_bar = lv_bar_create(battery_outline);
     lv_obj_set_size(battery_bar, 40, 20);
@@ -122,6 +124,5 @@ void app_main(void)
 {
     xiao_round_display_init();
     xiao_round_display_battery_ADC_init();
-    xiao_round_display_rtc_init();
     xiao_round_display_hardware_test();
 }
