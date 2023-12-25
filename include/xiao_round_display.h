@@ -12,15 +12,14 @@
 
 /**
  * @brief Initialize the xiao round display driver
- * 
  * @return esp_err_t  ESP_OK on success, otherwise on error.
  */
 esp_err_t xiao_round_display_init();
 
 /**
  * @brief Deinitialize the xiao round display driver
- * @return esp_err_t  ESP_OK on success, otherwise on error.
+ * @return None
  */
-esp_err_t xiao_round_display_deinit();
+void xiao_round_display_deinit();
 
 #endif // XIAO_ROUND_DISPLAY_H

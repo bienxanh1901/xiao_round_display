@@ -1,5 +1,5 @@
 ## IDF Component Manager Manifest File
-version: "1.0.1"
+version: "2.0.0"
 description: Xiao round display driver
 url: https://github.com/bienxanh1901/xiao_round_display
 issues: https://github.com/bienxanh1901/xiao_round_display/issues
@@ -10,10 +10,9 @@ maintainers:
   - "Hai Pham <pthanhhaiai@gmail.com>"
 
 dependencies:
-  espressif/esp_lcd_touch_cst816s: "^1.0.3"
   espressif/esp_lcd_gc9a01: "^1.2.0"
-  espressif/esp_lvgl_port: "^1.3.0"
+  bienxanh1901/esp_lvgl_port: "^1.4.0"
+  espressif/esp_lcd_touch: "*"
   ## Required IDF version
   idf:
-    version: ">=5.0.0"
-
+    version: ">=5.1.0"

@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        idf_ver: ["release-v5.0", "release-v5.1", "latest"]
+        idf_ver: ["release-v5.1", "latest"]
         idf_target: ["esp32s3"]
     steps:
     - name: Checkout repo

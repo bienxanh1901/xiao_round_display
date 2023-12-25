@@ -5,3 +5,5 @@ dependencies.lock
 dist
 doxygen
 managed_components
+bk.c
+.vscode
