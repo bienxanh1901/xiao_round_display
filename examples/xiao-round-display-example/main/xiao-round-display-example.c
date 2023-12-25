@@ -15,7 +15,8 @@ static lv_obj_t *slider_label;
 static lv_obj_t *battery_bar, *battery_label;
 
 
-void rtc_clock_cb(lv_timer_t * timer) {
+void rtc_clock_cb(lv_timer_t *timer)
+{
     lv_obj_t *rtc_clock = (lv_obj_t *)timer->user_data;
     struct tm time_data;
     xiao_round_display_rtc_get_time(&time_data);
@@ -27,8 +28,7 @@ void rtc_clock_cb(lv_timer_t * timer) {
 static void event_handler(lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
-    if (code == LV_EVENT_VALUE_CHANGED)
-    {
+    if (code == LV_EVENT_VALUE_CHANGED) {
         lv_obj_t *obj = lv_event_get_target(e);
         LV_LOG_USER("State: %s\n", lv_obj_has_state(obj, LV_STATE_CHECKED) ? "On" : "Off");
     }
@@ -37,14 +37,11 @@ static void event_handler(lv_event_t *e)
 static void hardware_polled_cb(lv_timer_t *timer)
 {
     lv_obj_t *tf_state = (lv_obj_t *)timer->user_data;
-    if (xiao_round_display_sd_card_init() == ESP_OK)
-    {
+    if (xiao_round_display_sd_card_init() == ESP_OK) {
         lv_obj_add_state(tf_state, LV_STATE_CHECKED);
         vTaskDelay(200 / portTICK_PERIOD_MS);
         xiao_round_display_sd_card_deinit();
-    }
-    else
-    {
+    } else {
         lv_obj_clear_state(tf_state, LV_STATE_CHECKED);
     }
     lv_label_set_text_fmt(battery_label, "%"LV_PRId32"%%", xiao_round_display_battery_level_read());
@@ -90,13 +87,13 @@ void xiao_round_display_hardware_test()
     xiao_round_display_rtc_get_time(&time_data);
     char rtc_time[10];
     sprintf(rtc_time, "%d:%d:%d", time_data.tm_hour, time_data.tm_min, time_data.tm_sec);
-    lv_obj_t * rtc_clock = lv_label_create(lv_scr_act());
+    lv_obj_t *rtc_clock = lv_label_create(lv_scr_act());
     lv_label_set_text(rtc_clock, rtc_time);
     lv_obj_set_pos(rtc_clock, 55, 45);
     lv_timer_create(rtc_clock_cb, 1000, rtc_clock);
 
     /* Battery */
-    lv_obj_t* battery_outline = lv_obj_create(lv_scr_act());
+    lv_obj_t *battery_outline = lv_obj_create(lv_scr_act());
     lv_obj_set_style_border_width(battery_outline, 2, 0);
     lv_obj_set_style_pad_all(battery_outline, 0, 0);
     lv_obj_set_style_radius(battery_outline, 8, 0);

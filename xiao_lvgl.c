@@ -9,8 +9,8 @@
 #include "xiao_lvgl.h"
 
 static lv_disp_t *lvgl_disp = NULL;
-extern esp_lcd_panel_io_handle_t io; 
-extern esp_lcd_panel_handle_t panel; 
+extern esp_lcd_panel_io_handle_t io;
+extern esp_lcd_panel_handle_t panel;
 extern esp_lcd_touch_handle_t handle;
 
 esp_err_t init_lvgl()

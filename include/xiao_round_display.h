@@ -12,7 +12,6 @@
 
 /**
  * @brief Initialize the xiao round display driver
- * 
  * @return esp_err_t  ESP_OK on success, otherwise on error.
  */
 esp_err_t xiao_round_display_init();

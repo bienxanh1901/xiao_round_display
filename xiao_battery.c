@@ -30,7 +30,7 @@ esp_err_t xiao_round_display_battery_ADC_init()
 
     adc_oneshot_chan_cfg_t config = {
         .bitwidth = ADC_BITWIDTH_DEFAULT,
-            .atten = ADC_ATTEN_DB_11,
+        .atten = ADC_ATTEN_DB_11,
     };
 
     ret = adc_oneshot_new_unit(&init_config, &battery_handle);
@@ -49,13 +49,13 @@ void xiao_round_display_battery_ADC_deinit()
 }
 
 int32_t xiao_round_display_battery_level_read()
-{   
+{
     int voltage = 0;
     int level = 0;
     adc_oneshot_get_calibrated_result(battery_handle, cali_handle, channel, &voltage);
 
     level = (voltage - 1850) * 100 / 250; // 1850 ~ 2100
-    level = (level < 0) ? 0 : ((level > 100) ? 100 : level); 
+    level = (level < 0) ? 0 : ((level > 100) ? 100 : level);
     ESP_LOGI(TAG, "Cali level: %d", level);
     return level;
 }
